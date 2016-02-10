@@ -8,4 +8,7 @@ class SplintersController < ApplicationController
     @splinter.save
     redirect_to @splinter
   end
+
+  def show
+  end
 end
