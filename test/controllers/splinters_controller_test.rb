@@ -16,5 +16,8 @@ class SplintersControllerTest < ActionController::TestCase
     splinter.save
     get(:show, {'id' => "1"})
     assert_response :success
+    assert_select '#title', splinter.title
+    assert_select '#url', splinter.url
+    assert_select '#image', splinter.image
   end
 end
