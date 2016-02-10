@@ -10,5 +10,6 @@ class SplintersController < ApplicationController
   end
 
   def show
+    @splinter = Splinter.find(params.require(:id));
   end
 end

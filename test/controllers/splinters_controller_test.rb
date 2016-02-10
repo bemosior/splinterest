@@ -12,6 +12,8 @@ class SplintersControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
+    splinter = Splinter.new(id: 1, title: "test", url: "http://www.github.com", image: "abc")
+    splinter.save
     get(:show, {'id' => "1"})
     assert_response :success
   end
