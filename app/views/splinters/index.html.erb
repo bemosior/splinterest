@@ -1,0 +1,16 @@
+<% @splinters.each do |splinter| %>
+<p>
+  <strong>Title:</strong>
+  <span id="title"><%= splinter.title %></span>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <span id="url"><%= splinter.url %></span>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <span id="image"><%= splinter.image %></span>
+</p>
+<% end %>

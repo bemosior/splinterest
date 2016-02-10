@@ -20,4 +20,22 @@ class SplintersControllerTest < ActionController::TestCase
     assert_select '#url', splinter.url
     assert_select '#image', splinter.image
   end
+
+  test "should get index" do
+    splinters = []
+    (1..5).each do |id|
+      splinter = Splinter.new(id: id, title: Faker::Company.catch_phrase, url: Faker::Internet.url, image: "abc")
+      splinter.save
+      splinters.push(splinter)
+    end
+
+    get :index
+    assert_response :success
+
+    splinters.each do |splinter|
+      assert_select '#title', splinter.title
+      assert_select '#url', splinter.url
+      assert_select '#image', splinter.image
+    end
+  end
 end
