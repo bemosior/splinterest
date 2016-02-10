@@ -3,6 +3,9 @@ class SplintersController < ApplicationController
   end
 
   def create
-    render plain: params[:splinter].inspect
+    @splinter = Splinter.new(params[:splinter])
+
+    @splinter.save
+    redirect_to @splinter
   end
 end
