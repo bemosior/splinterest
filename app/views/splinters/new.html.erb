@@ -1,1 +1,21 @@
 <h1>New splinter.</h1>
+<%= form_for :splinter do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :url %><br>
+      <%= f.text_field :url %>
+    </p>
+
+    <p>
+      <%= f.label :image %><br>
+      <%= f.text_area :image %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
