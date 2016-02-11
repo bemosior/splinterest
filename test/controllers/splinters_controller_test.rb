@@ -11,6 +11,13 @@ class SplintersControllerTest < ActionController::TestCase
     assert_response :redirect
   end
 
+  test "should get edit" do
+    splinter = Splinter.new(id: 1, title: Faker::Company.catch_phrase, url: Faker::Internet.url, image: "abc")
+    splinter.save
+    get(:edit, {'id' => "1"})
+    assert_response :success
+  end
+
   test "should get show" do
     splinter = Splinter.new(id: 1, title: Faker::Company.catch_phrase, url: Faker::Internet.url, image: "abc")
     splinter.save

@@ -10,6 +10,10 @@ class SplintersController < ApplicationController
     redirect_to @splinter
   end
 
+  def edit
+    @splinter = Splinter.find(params[:id])
+  end
+
   def show
     @splinter = Splinter.find(params[:id])
   end
