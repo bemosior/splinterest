@@ -10,10 +10,10 @@ class SplintersController < ApplicationController
   end
 
   def show
-    @splinter = Splinter.find(params[:id]);
+    @splinter = Splinter.find(params[:id])
   end
 
   def index
-    @splinters = Splinter.all;
+    @splinters = Splinter.all
   end
 end
