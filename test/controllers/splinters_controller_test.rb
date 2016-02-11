@@ -16,9 +16,9 @@ class SplintersControllerTest < ActionController::TestCase
     splinter.save
     get(:show, {'id' => "1"})
     assert_response :success
-    assert_select '#title', splinter.title
-    assert_select '#url', splinter.url
-    assert_select '#image', splinter.image
+    assert_select 'dd', splinter.title
+    assert_select 'dd', splinter.url
+    assert_select 'dd', splinter.image
   end
 
   test "should get index" do
@@ -33,9 +33,9 @@ class SplintersControllerTest < ActionController::TestCase
     assert_response :success
 
     splinters.each do |splinter|
-      assert_select '#title', splinter.title
-      assert_select '#url', splinter.url
-      assert_select '#image', splinter.image
+      assert_select 'td', splinter.title
+      assert_select 'td', splinter.url
+      assert_select 'td', splinter.image
     end
   end
 end

@@ -1,5 +1,6 @@
 class SplintersController < ApplicationController
   def new
+    @splinter = Splinter.new
   end
 
   def create
