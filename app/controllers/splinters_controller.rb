@@ -4,7 +4,10 @@ class SplintersController < ApplicationController
   end
 
   def create
-    @splinter = Splinter.new(params.require(:splinter).permit(:title, :url, :image))
+    @splinter = Splinter.new(
+      params.require(:splinter)
+        .permit(:title, :url, :image)
+    )
 
     @splinter.save
     redirect_to @splinter
